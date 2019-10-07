@@ -28,6 +28,7 @@ export default class Docusaurus2Theme extends MarkdownTheme {
   }
 
   writeSideBar(renderer: RendererEvent, docusarusRoot: string) {
+    console.log('Writing sidebar');
     const childDirectory = renderer.outputDirectory.split(docusarusRoot + 'docs/')[1];
     const docsRoot = childDirectory ? childDirectory + '/' : '';
     const websitePath = docusarusRoot + 'website';
@@ -59,6 +60,7 @@ export default class Docusaurus2Theme extends MarkdownTheme {
     const navObject = {};
     let url = '';
     let navKey = '';
+    console.log('What?');
     this.getNavigation(renderer.project).children.forEach(rootNavigation => {
       rootNavigation.children.map(item => {
         try {

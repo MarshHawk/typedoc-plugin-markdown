@@ -6,6 +6,7 @@ import { Component, ConverterComponent } from 'typedoc/dist/lib/converter/compon
 @Component({ name: 'markdown' })
 export class MarkdownPlugin extends ConverterComponent {
   initialize() {
+    console.log('initialize!!!');
     this.listenTo(this.owner, {
       [Converter.EVENT_BEGIN]: this.onBegin,
       [Converter.EVENT_RESOLVE_BEGIN]: this.onResolveBegin,
@@ -16,6 +17,7 @@ export class MarkdownPlugin extends ConverterComponent {
    * Overide the default assets for any custom themes to inherit
    */
   onBegin() {
+    console.log('onBegin!!!');
     Renderer.getDefaultTheme = () => path.join(__dirname, 'resources');
   }
 
